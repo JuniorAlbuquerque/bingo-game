@@ -31,10 +31,23 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '$4',
-    width: 'fit-content',
+    width: '100%',
+    padding: '8px 16px',
 
     h1: {
       fontFamily: '$pacifico'
+    },
+
+    '@bp1': {
+      maxWidth: 640
+    },
+
+    '@bp2': {
+      maxWidth: 640
+    },
+
+    '@bp3': {
+      maxWidth: 380
     }
   }),
 

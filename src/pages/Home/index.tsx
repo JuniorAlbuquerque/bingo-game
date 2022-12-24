@@ -73,7 +73,7 @@ const Home: FC = () => {
     <div className={styles.wrapper()}>
       <main>
         <div className={styles.action()}>
-          <h1>Bingo Albuquerque Tavares</h1>
+          <h1>Jnr Bingo's</h1>
           {!manual && <Button onClick={sortNumber}>Rodar</Button>}
           <div className={styles.lastNumberSorted()}>
             Último sorteado:
