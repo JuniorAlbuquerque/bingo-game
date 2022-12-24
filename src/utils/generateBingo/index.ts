@@ -4,7 +4,9 @@ export type BingoData = {
   [key in typeof bingoLetters[number]]: number[]
 }
 
-const bingoMaxItems = 15
+export const bingoMaxItems = 15
+export const maxNumbers = 75
+export const basedBingo = Array.from({ length: maxNumbers }, (_, i) => i + 1)
 
 export const generateBingo = () => {
   const bingoData: BingoData = {} as BingoData

@@ -1,9 +1,13 @@
-export const maxNumbers = 75
+import { basedBingo } from '../generateBingo'
 
-export const getRandomBingoNumber = () => {
+export const getRandomBingoNumber = (sorteds: number[]) => {
+  const allowedSortedNumbers = basedBingo.filter(
+    (number) => !sorteds.includes(number)
+  )
+
+  const sortedIndex = Math.floor(Math.random() * allowedSortedNumbers.length)
+  const sortedNumber = allowedSortedNumbers[sortedIndex]
   let formatedBingoNumber = ''
-
-  const sortedNumber = Math.floor(Math.random() * maxNumbers + 1)
 
   if (sortedNumber <= 15) {
     formatedBingoNumber = `B - ${sortedNumber}`
