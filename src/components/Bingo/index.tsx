@@ -5,9 +5,11 @@ import { BingoNumber, styles } from './styles'
 type BingoProps = {
   data: BingoData
   sorteds: number[]
+  manual?: boolean
+  onSelect?: (number: number) => void
 }
 
-const Bingo: FC<BingoProps> = ({ data, sorteds }) => {
+const Bingo: FC<BingoProps> = ({ data, sorteds, manual, onSelect }) => {
   return (
     <div className={styles.root()}>
       {Object.entries(data)?.map(([letter, numbers]) => (
@@ -18,7 +20,16 @@ const Bingo: FC<BingoProps> = ({ data, sorteds }) => {
             const active = sorteds?.includes(number)
 
             return (
-              <BingoNumber key={number} variant={active ? 'active' : null}>
+              <BingoNumber
+                key={number}
+                variant={active ? 'active' : null}
+                onClick={() => {
+                  manual && onSelect(number)
+                }}
+                css={{
+                  cursor: manual ? 'pointer' : 'initial'
+                }}
+              >
                 {number}
               </BingoNumber>
             )
