@@ -1,7 +1,7 @@
 import { styled } from '@/styles/stitches.config'
 
 export const OverlayWrapper = styled('div', {
-  position: 'absolute',
+  position: 'fixed',
   zIndex: 999,
   top: 0,
   left: 0,
