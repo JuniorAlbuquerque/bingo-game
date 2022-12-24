@@ -15,7 +15,7 @@ export const getPhrase = (letter: string, number: string) => {
     B: ['B de Brasil perdeu para a Cróacia', 'B de Babu', 'B', 'B de Buiú'],
     I: ['I de Irineu', 'I de Iracema', 'I', 'I'],
     N: ['N de Nazaré Tedesco', 'N de Noites traiçoeiras', 'N', 'N'],
-    G: ['G de Ga ga ga go', 'G', 'G', 'G'],
+    G: ['G de Gol do Mengão', 'G', 'G', 'G'],
     O: ['Ó de Olha a pedra', 'Ó', 'Ó de ovo', 'Ó']
   }
 
