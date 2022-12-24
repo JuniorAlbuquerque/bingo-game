@@ -9,6 +9,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 import Overlay from '@/components/Overlay'
 import { getPhrase } from '@/utils/phrases'
 import { formattedBingoNumber } from '@/utils/formatedBingoNumber'
+import * as device from 'react-device-detect'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { useSpeechSynthesis } from 'react-speech-kit'
@@ -37,6 +38,10 @@ const Home: FC = () => {
   }
 
   const sortNumber = async () => {
+    if (device.isMobile) {
+      speak()
+    }
+
     const copySorteds = [...sorteds]
 
     if (copySorteds.length === maxNumbers) {
@@ -61,7 +66,7 @@ const Home: FC = () => {
       text: getPhrase(splitedBingoPhrase[0], splitedBingoPhrase[1]),
       rate: 0.7,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ...voices.find((voice: any) => voice.voiceURI === 'Luciana')
+      ...voices.find((voice: any) => voice.voiceURI.includes('Luciana'))
     })
   }
 
