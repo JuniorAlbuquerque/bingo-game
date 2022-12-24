@@ -21,16 +21,17 @@ const Home: FC = () => {
   const { speak, voices } = useSpeechSynthesis()
 
   const sortNumber = async () => {
-    setLoading(true)
-    await delay(2000)
-
     const copySorteds = [...sorteds]
-    const sortedNumbers = getRandomBingoNumber(copySorteds)
 
     if (copySorteds.length === maxNumbers) {
       alert('Bingo finalizado.')
       return
     }
+
+    setLoading(true)
+    await delay(2000)
+
+    const sortedNumbers = getRandomBingoNumber(copySorteds)
 
     copySorteds.push(sortedNumbers?.sortedNumber)
 
