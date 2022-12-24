@@ -1,9 +1,4 @@
-import { css, keyframes } from '@/styles/stitches.config'
-
-const logoSpin = keyframes({
-  from: { WebkitTransform: 'rotate(0deg)', transform: 'rotate(0deg)' },
-  to: { WebkitTransform: 'rotate(360deg)', transform: 'rotate(360deg)' }
-})
+import { css } from '@/styles/stitches.config'
 
 export const styles = {
   wrapper: css({
@@ -31,12 +26,35 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '$4',
-    width: 340
+    width: 340,
+
+    h1: {
+      fontFamily: '$pacifico'
+    }
+  }),
+
+  lastNumberSorted: css({
+    marginTop: '$4',
+    background: '$gray1',
+    padding: '$4',
+    borderRadius: '$3',
+    fontSize: '$4',
+
+    span: {
+      marginLeft: 8,
+      border: '1px solid $purple9',
+      background: '$purple9',
+      fontWeight: 600,
+      color: '$purple12',
+
+      padding: '$1 $2',
+      borderRadius: '$2'
+    }
   }),
 
   footer: css({
     marginTop: 'auto',
-    marginBottom: '$4',
+    marginBottom: '$6',
 
     code: {
       background: '$gray5',
