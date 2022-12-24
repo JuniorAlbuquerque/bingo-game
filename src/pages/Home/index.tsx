@@ -60,7 +60,8 @@ const Home: FC = () => {
     speak({
       text: getPhrase(splitedBingoPhrase[0], splitedBingoPhrase[1]),
       rate: 0.7,
-      ...voices[157]
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ...voices.find((voice: any) => voice.voiceURI === 'Luciana')
     })
   }
 
