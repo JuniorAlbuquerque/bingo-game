@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react'
 import { styles } from './styles'
 import { Button } from '@/components/Button'
-import { BingoData, generateBingo } from '@/utils/generateBingo'
-import { getRandomBingoNumber, maxNumbers } from '@/utils/randomNumber'
+import { BingoData, generateBingo, maxNumbers } from '@/utils/generateBingo'
+import { getRandomBingoNumber } from '@/utils/randomNumber'
 import Bingo from '@/components/Bingo'
 import { delay } from '@/utils/delay'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -25,14 +25,10 @@ const Home: FC = () => {
     await delay(2000)
 
     const copySorteds = [...sorteds]
-    const sortedNumbers = getRandomBingoNumber()
+    const sortedNumbers = getRandomBingoNumber(copySorteds)
 
     if (copySorteds.length === maxNumbers) {
-      return
-    }
-
-    if (copySorteds.includes(sortedNumbers.sortedNumber)) {
-      sortNumber()
+      alert('Bingo finalizado.')
       return
     }
 
@@ -74,7 +70,12 @@ const Home: FC = () => {
 
       <footer className={styles.footer()}>
         <p>
-          Feito por: <code>JuniorAlbuquerque.jnr</code>
+          Feito por:{' '}
+          <code>
+            <a href="https://ed-jnr.com/" target="__blank">
+              Ed-jnr
+            </a>
+          </code>
         </p>
       </footer>
 

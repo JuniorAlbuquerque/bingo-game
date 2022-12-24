@@ -11,6 +11,7 @@ export const styles = {
     main: {
       marginTop: 'auto',
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       gap: '$3',
@@ -18,6 +19,10 @@ export const styles = {
 
       p: {
         marginTop: '$2'
+      },
+
+      '@bp3': {
+        flexDirection: 'row'
       }
     }
   }),
@@ -26,7 +31,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '$4',
-    width: 340,
+    width: 'fit-content',
 
     h1: {
       fontFamily: '$pacifico'
@@ -34,7 +39,7 @@ export const styles = {
   }),
 
   lastNumberSorted: css({
-    marginTop: '$4',
+    marginTop: '$2',
     background: '$gray1',
     padding: '$4',
     borderRadius: '$3',

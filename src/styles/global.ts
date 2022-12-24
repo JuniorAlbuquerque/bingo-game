@@ -15,6 +15,14 @@ export const globalStyles = globalCss({
     fontFamily: '$default',
     fontSize: '$3'
   },
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
+
+    ':visited': {
+      color: 'inherit'
+    }
+  },
   body: {
     height: '100vh',
     color: '$white'
